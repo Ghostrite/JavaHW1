@@ -13,11 +13,15 @@ java.sql.Connection con;
 java.sql.Statement s;
 java.sql.ResultSet rs;
 java.sql.PreparedStatement pst;
-
+int x = 0;
 con=null;
 s=null;
 pst=null;
 rs=null;
+String FN = request.getParameter("first_name");
+String LN = request.getParameter("last_name");
+String ID = request.getParameter("IDnumber");
+ 
 
 // Remember to change the next line with your own environment 
 String url= 
@@ -33,23 +37,11 @@ con = java.sql.DriverManager.getConnection(url, id, pass);
 cnfex.printStackTrace();
 
 }
-String sql = "INSERT INTO PERSONS VALUES(123456,'Jacob','Belmore');";
+String sql = "INSERT INTO PERSONS VALUES("+ID+",'"+FN+"','"+LN+"');";
 try{
 s = con.createStatement();
-rs = s.executeUpdate(sql);
-%>
+x = s.executeUpdate(sql);
 
-<%
-while( rs.next() ){
-%><tr>
-<td><%= rs.getString("FIRSTNAME") %></td>
-
-</tr>
-<%
-}
-%>
-
-<%
 
 }
 catch(Exception e){

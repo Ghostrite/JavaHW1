@@ -18,7 +18,8 @@ con=null;
 s=null;
 pst=null;
 rs=null;
-
+String FN = request.getParameter("first_name");
+String LN = request.getParameter("last_name");
 // Remember to change the next line with your own environment 
 String url= 
 "jdbc:jtds:sqlserver://acaddb/RJB_GG";
@@ -33,7 +34,7 @@ con = java.sql.DriverManager.getConnection(url, id, pass);
 cnfex.printStackTrace();
 
 }
-String sql = "SELECT * FROM dbo.Persons";
+String sql = "SELECT * FROM dbo.PERSONS where FIRSTNAME like'%"+LN+"%'OR LASTNAME like'"+LN+"'";
 try{
 s = con.createStatement();
 rs = s.executeQuery(sql);
@@ -43,6 +44,8 @@ rs = s.executeQuery(sql);
 while( rs.next() ){
 %><tr>
 <td><%= rs.getString("FIRSTNAME") %></td>
+<td><%= rs.getString("LASTNAME") %></td>
+<td><%= rs.getString("IDnumber") %></td>
 
 </tr>
 <%

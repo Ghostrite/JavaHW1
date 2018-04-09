@@ -7,10 +7,13 @@
       <h1>Reading form data:</h1>
       <ul>
          <li><p><b>First Name:</b>
-            <%= request.getParameter("first_name")%>
+             <%=String FN = request.getParameter("first_name")%> 
          </p></li>
          <li><p><b>Last  Name:</b>
-            <%= request.getParameter("last_name")%>
+		   <%=String LN = request.getParameter("last_name")%>
+         </p></li>
+		 <li><p><b>ID  Name:</b>
+		   <%=String ID = request.getParameter("IDnumber")%>
          </p></li>
       </ul>
    
