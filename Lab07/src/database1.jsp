@@ -21,7 +21,7 @@ rs=null;
 String url= 
 "jdbc:jtds:sqlserver://acaddb/RJB_GG";
 String id= "sa";
-String pass = "Op4SQLclass";
+String pass = "";
 try{
 
 Class.forName("net.sourceforge.jtds.jdbc.Driver");
