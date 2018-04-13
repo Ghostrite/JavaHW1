@@ -47,12 +47,12 @@ public class Pong extends Applet implements Runnable, KeyListener {
 		gfx.fillRect(0, 0, WIDTH, HEIGHT);
 		if(b1.getX()< -10) {
 			gfx.setColor(Color.red);
-			gfx.drawString("Game Over", 350, 250);
+			gfx.drawString("PLayer 1 Loses Life", 350, 250);
 			//Player 1 loses life
 		}
 		else if (b1.getX()>710) {
 			gfx.setColor(Color.red);
-			gfx.drawString("Game Over", 350, 250);
+			gfx.drawString("Player 2 Loses Life", 350, 250);
 			//player 2 loses life
 		}
 		else {
