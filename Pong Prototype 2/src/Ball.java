@@ -33,8 +33,8 @@ public class Ball {
 	
 	public void checkPaddleCollision(HumanPaddle p1, HumanPaddle p2) {
 		
-		if(x <=50) {
-			if(y >=p1.getY() && y <= p1.getY() + p1.getLength()) { 
+		if(x <=50 && x>=20) {
+			if(y >=p1.getY() && y <= p1.getY() + p1.getLength() && xVel < 0) { 
 				if(x >=p1.getX() && x <= p1.getX() + 20) {
 					yVel = -Math.abs(yVel);
 					xVel = -Math.abs(xVel);
@@ -47,8 +47,8 @@ public class Ball {
 			}
 			}
 		
-		else if(x>=650) {
-			if(y >= p2.getY() && y <=p2.getY() + p2.getLength()) {
+		else if(x>=650 && x<=680) {
+			if(y >= p2.getY() && y <=p2.getY() + p2.getLength() && xVel > 0) {
 				if(y >=p2.getX() && y <= p2.getX()+20) {
 					
 					xVel = -4;
