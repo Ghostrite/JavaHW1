@@ -1,11 +1,13 @@
 
 import java.applet.Applet;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Timer;
+import javax.swing.JApplet;
 public class Pong extends Applet implements Runnable, KeyListener {
 	
 	
@@ -29,6 +31,7 @@ public class Pong extends Applet implements Runnable, KeyListener {
 	Image img;
 	
 	public void init() {
+		
 		this.resize(WIDTH,HEIGHT);
 		this.addKeyListener(this);
 		p1 = new HumanPaddle(1);
@@ -42,6 +45,7 @@ public class Pong extends Applet implements Runnable, KeyListener {
 		list = new Plist();
 		gameStarted = false;
 		winner = "";
+//		this.setPreferredSize(d);
 		
 		
 		/*Adding random powerups to the list of powerups on the screen*/
