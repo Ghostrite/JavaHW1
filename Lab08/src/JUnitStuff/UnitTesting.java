@@ -1,5 +1,7 @@
 package JUnitStuff;
 
+import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class UnitTesting {
 	
@@ -21,21 +23,77 @@ public class UnitTesting {
 		
 	}
 	
-	public int divXByY(int x, int y) {
+	
+	public Integer divXByY(int x, int y) {
 		if (y==0) {
-			return (Integer) null;
+			
+			return null;
 		}
 		else {
+			
 		return (x/y);
 		}
 }
 	public int[] reverseIntArray(int[] x) {
-		for (int i=0; i<x.length/2; i++) {
-			int temp = x[i];
-			x[i] = x[x.length-i-1];
-			x[x.length-i-1] = temp;
-	
+		 
+		int[] ArrayReverse = new int[x.length];
+		
+		
+		int tempVar = 0;
+		 for (int i = x.length-1; i>=0; i--) 
+		 {
+			 
+			 ArrayReverse[tempVar] = x[i];
+			 
+			tempVar += 1;
+			 
+			 	
 		}
-		return x;
+		
+		return ArrayReverse;
 	}
-}
+	
+	public int[] range(int x) {
+		 
+		int[] ArrayRange = new int[x];
+		int tempVar = 0;
+		 for (int i = 0; i<x; i++) 
+		 {
+			 ArrayRange[tempVar] = i;
+			 tempVar+=1;
+			 
+		}
+		
+		return ArrayRange;
+	}
+	public int[] range(int x, int y) {
+		 
+		int[] ArrayRange = new int[y];
+		int tempVar = 0;
+		 for (int i = x; i<y; i++) 
+		 {
+			 ArrayRange[tempVar] = i;
+			 tempVar+=1;
+			 
+			
+		}
+		
+		return ArrayRange;
+	}
+	public int[] range(int x, int y, int z) {
+		 
+		int[] ArrayRange = new int[y];
+		int tempVar = 0;
+		 for (int i = x; i<y; i+=z) 
+		 {
+			 ArrayRange[tempVar] = i;
+			 tempVar+=1;
+			 System.out.println(i);
+			 
+		}
+		
+		return ArrayRange;
+	}
+	
+	}
+
